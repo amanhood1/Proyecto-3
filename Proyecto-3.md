@@ -485,7 +485,7 @@ model_SVM(3)
     ## # A tibble: 1 x 3
     ##   .metric .estimator .estimate
     ##   <chr>   <chr>          <dbl>
-    ## 1 roc_auc binary         0.989
+    ## 1 roc_auc binary         0.991
 
 ``` r
 #model_SVM(4)
@@ -542,7 +542,8 @@ ejercicio.
 Esto se puede deber a temas desde distancia recorrida, velocidad, etc.
 
 Entonces por medio de este condicional sera posible identificar si las
-actividades fueron ingresadas de manera correcta o erronea.
+actividades fueron ingresadas de manera correcta o erronea al ser
+comparadas con las orginales.
 
 ``` r
 sport2$prediccion <- ifelse(modeloPrediccion$.pred_0 >= modeloPrediccion$.pred_1, 0, 1)
@@ -570,30 +571,37 @@ head(sport_x)
 ```
 
     ##   calories distance elev_low elev_high max_speed moving_time elapsed_time
-    ## 1     95.6   2443.8    603.8     635.3     6.400         642          778
-    ## 2     69.6   1895.3    603.8     635.1    10.100         665          811
-    ## 3    114.6   2944.7    604.0     647.2    15.500        1069         1260
-    ## 4    104.3   2423.4    603.9     635.6     6.800         799          937
-    ## 5    549.7   2403.9    349.3     379.0    11.600        3213         3243
-    ## 6    771.1  26650.8    563.9     783.9    33.679        6168         6785
+    ## 1    104.3   2423.4    603.9     635.6     6.800         799          937
+    ## 2    549.7   2403.9    349.3     379.0    11.600        3213         3243
+    ## 3    291.4   3456.9    627.8     649.0    15.400         308          325
+    ## 4    771.1  26650.8    563.9     783.9    33.679        6168         6785
+    ## 5    195.4   5294.7    338.2     369.9     8.100        2254         2408
+    ## 6     62.4   3632.1    628.7     650.1     6.100        1228         1400
     ##   average_speed total_elevation_gain typeCode prediccion
-    ## 1         3.807                 31.5        0          1
-    ## 2         2.850                 30.9        0          1
-    ## 3         2.755                 49.1        0          1
-    ## 4         3.033                 31.6        0          1
-    ## 5         0.748                 32.9        0          1
-    ## 6         4.321                333.2        0          1
+    ## 1         3.033                 31.6        0          1
+    ## 2         0.748                 32.9        0          1
+    ## 3        11.224                 11.0        1          0
+    ## 4         4.321                333.2        0          1
+    ## 5         2.349                 65.3        0          1
+    ## 6         2.958                 20.0        0          1
 
 Finalmente, se procede a mostrar cuantos registros fueron ingresados de
-manera erronea, estos son 4866.
+manera erronea. De esta manera segun nuestro modelo podemos conocer la
+cantidad de registros que segun nuestros analisis son erroneos, y que
+podrían conducir a problemas en los temas de rankings y records.
 
 ``` r
 nrow(sport_x)
 ```
 
-    ## [1] 5299
+    ## [1] 4961
 
 # Conclusion
+
+Es importante mencionar, que hay ciertos valores que anotamos en la
+parte de texto y explicaciones que pueden que difieran con lo que
+muestra R. Esto es porque hemos corrido el programa varias veces y en
+ocasiones cambian estos resultados.
 
 A modo de conclusion podemos apreciar que existe una cierta cantidad de
 registros que fueron ingresados de manera erronea. Esto puede deberse a

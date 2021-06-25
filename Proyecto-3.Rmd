@@ -279,7 +279,7 @@ De esta manera obtenemos las probabilidades de que cada registro de actividad pe
 
 Esto se puede deber a temas desde distancia recorrida, velocidad, etc. 
 
-Entonces por medio de este condicional sera posible identificar si las actividades fueron ingresadas de manera correcta o erronea.
+Entonces por medio de este condicional sera posible identificar si las actividades fueron ingresadas de manera correcta o erronea al ser comparadas con las orginales.
 
 ```{r}
 sport2$prediccion <- ifelse(modeloPrediccion$.pred_0 >= modeloPrediccion$.pred_1, 0, 1)
@@ -299,13 +299,15 @@ Finalmente, se muestra por medio de un head como ha cambiado la clasificación d
 head(sport_x)
 ```
 
-Finalmente, se procede a mostrar cuantos registros fueron ingresados de manera erronea, estos son 4866.
+Finalmente, se procede a mostrar cuantos registros fueron ingresados de manera erronea. De esta manera segun nuestro modelo podemos conocer la cantidad de registros que segun nuestros analisis son erroneos, y que podrían conducir a problemas en los temas de rankings y records.
 
 ```{r total erróneas}
 nrow(sport_x)
 ```
 
 # Conclusion
+
+Es importante mencionar, que hay ciertos valores que anotamos en la parte de texto y explicaciones que pueden que difieran con lo que muestra R. Esto es porque hemos corrido el programa varias veces y en ocasiones cambian estos resultados.
 
 A modo de conclusion podemos apreciar que existe una cierta cantidad de registros que fueron ingresados de manera erronea. Esto puede deberse a diversos factores, desde que por estar con prisa ingresaron mal el tipo de actividad, hasta que quizás qurian engañar al sistema y asi obtener un buen registro.
 
