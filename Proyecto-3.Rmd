@@ -79,7 +79,7 @@ sport2$has_heartrate <- NULL
 
 Podemos apreciar que existen 5 tipos de mediciones, estas son "Ride", "Run", "Walk", "Hike" y "EBikeRide". Adicionalmente, tenemos que hacer una conversion de variables a numericas (para aquellas que son numeros pero estan en tipo de dato character). De esta manera no habran incongruencias al momento de hacer futuros analisis.
 
-Finalmente, para poder categorizar aquellos registros que fueron realizados a pie y en bicicleta se converitra la variable "type" a valores de 1 para aquellas que sean en bicicleta y 0 para aquellas que son a pie.
+Finalmente, para poder categorizar aquellos registros que fueron realizados a pie y en bicicleta se converitra la variable "type" a valores de 1 para aquellas que sean en bicicleta y 0 para aquellas que son a pie. De esta manera podremos comparar luego que actividades fueron ingresadas mal y asi tener el número de estas.
 
 Luego se deja la variable original "type" nula, para que no sea usada de nuevo.
 

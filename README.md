@@ -159,7 +159,8 @@ incongruencias al momento de hacer futuros analisis.
 Finalmente, para poder categorizar aquellos registros que fueron
 realizados a pie y en bicicleta se converitra la variable “type” a
 valores de 1 para aquellas que sean en bicicleta y 0 para aquellas que
-son a pie.
+son a pie. De esta manera podremos comparar luego que actividades fueron
+ingresadas mal y asi tener el número de estas.
 
 Luego se deja la variable original “type” nula, para que no sea usada de
 nuevo.
@@ -471,7 +472,7 @@ model_SVM(2)
     ## # A tibble: 1 x 3
     ##   .metric .estimator .estimate
     ##   <chr>   <chr>          <dbl>
-    ## 1 roc_auc binary         0.988
+    ## 1 roc_auc binary         0.986
 
 Al probar el modelo con un grado igual a 2 en la funcion, vemos que le
 resultado de explicacion es mucho mejor, teniendo un valor de 98.78%.
@@ -485,7 +486,7 @@ model_SVM(3)
     ## # A tibble: 1 x 3
     ##   .metric .estimator .estimate
     ##   <chr>   <chr>          <dbl>
-    ## 1 roc_auc binary         0.991
+    ## 1 roc_auc binary         0.987
 
 ``` r
 #model_SVM(4)
@@ -571,17 +572,17 @@ head(sport_x)
 ```
 
     ##   calories distance elev_low elev_high max_speed moving_time elapsed_time
-    ## 1    104.3   2423.4    603.9     635.6     6.800         799          937
-    ## 2    549.7   2403.9    349.3     379.0    11.600        3213         3243
-    ## 3    291.4   3456.9    627.8     649.0    15.400         308          325
-    ## 4    771.1  26650.8    563.9     783.9    33.679        6168         6785
-    ## 5    195.4   5294.7    338.2     369.9     8.100        2254         2408
-    ## 6     62.4   3632.1    628.7     650.1     6.100        1228         1400
+    ## 1     95.6   2443.8    603.8     635.3       6.4         642          778
+    ## 2    104.3   2423.4    603.9     635.6       6.8         799          937
+    ## 3    549.7   2403.9    349.3     379.0      11.6        3213         3243
+    ## 4    291.4   3456.9    627.8     649.0      15.4         308          325
+    ## 5    195.4   5294.7    338.2     369.9       8.1        2254         2408
+    ## 6     62.4   3632.1    628.7     650.1       6.1        1228         1400
     ##   average_speed total_elevation_gain typeCode prediccion
-    ## 1         3.033                 31.6        0          1
-    ## 2         0.748                 32.9        0          1
-    ## 3        11.224                 11.0        1          0
-    ## 4         4.321                333.2        0          1
+    ## 1         3.807                 31.5        0          1
+    ## 2         3.033                 31.6        0          1
+    ## 3         0.748                 32.9        0          1
+    ## 4        11.224                 11.0        1          0
     ## 5         2.349                 65.3        0          1
     ## 6         2.958                 20.0        0          1
 
@@ -594,7 +595,7 @@ podrían conducir a problemas en los temas de rankings y records.
 nrow(sport_x)
 ```
 
-    ## [1] 4961
+    ## [1] 5037
 
 # Conclusion
 
