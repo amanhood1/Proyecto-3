@@ -1,8 +1,9 @@
 ---
 title: "Proyecto 3"
 output: github_document
-authors: Alejandro Manhood, Estivaliz Rosales
 ---
+
+# Alumnos: Alejandro Manhood, Estivaliz Rosales
 
 # Análisis de deportes de resistencia
 

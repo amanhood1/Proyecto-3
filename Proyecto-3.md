@@ -1,6 +1,8 @@
 Proyecto 3
 ================
 
+# Alumnos: Alejandro Manhood, Estivaliz Rosales
+
 # Análisis de deportes de resistencia
 
 En el presente proyecto se busca clasificar las actividades hechas por
@@ -454,7 +456,7 @@ model_SVM(1)
     ## # A tibble: 1 x 3
     ##   .metric .estimator .estimate
     ##   <chr>   <chr>          <dbl>
-    ## 1 roc_auc binary         0.935
+    ## 1 roc_auc binary         0.936
 
 Podemos apreciar que el resultado que entrega con grado 1 este modelo es
 muy bueno, de hecho de un 93.63%, lo cual da un muy buen porcentaje de
@@ -483,7 +485,7 @@ model_SVM(3)
     ## # A tibble: 1 x 3
     ##   .metric .estimator .estimate
     ##   <chr>   <chr>          <dbl>
-    ## 1 roc_auc binary         0.990
+    ## 1 roc_auc binary         0.989
 
 ``` r
 #model_SVM(4)
@@ -568,19 +570,19 @@ head(sport_x)
 ```
 
     ##   calories distance elev_low elev_high max_speed moving_time elapsed_time
-    ## 1    114.6   2944.7    604.0     647.2    15.500        1069         1260
-    ## 2    104.3   2423.4    603.9     635.6     6.800         799          937
-    ## 3    549.7   2403.9    349.3     379.0    11.600        3213         3243
-    ## 4    291.4   3456.9    627.8     649.0    15.400         308          325
-    ## 5    771.1  26650.8    563.9     783.9    33.679        6168         6785
-    ## 6    195.4   5294.7    338.2     369.9     8.100        2254         2408
+    ## 1     95.6   2443.8    603.8     635.3     6.400         642          778
+    ## 2     69.6   1895.3    603.8     635.1    10.100         665          811
+    ## 3    114.6   2944.7    604.0     647.2    15.500        1069         1260
+    ## 4    104.3   2423.4    603.9     635.6     6.800         799          937
+    ## 5    549.7   2403.9    349.3     379.0    11.600        3213         3243
+    ## 6    771.1  26650.8    563.9     783.9    33.679        6168         6785
     ##   average_speed total_elevation_gain typeCode prediccion
-    ## 1         2.755                 49.1        0          1
-    ## 2         3.033                 31.6        0          1
-    ## 3         0.748                 32.9        0          1
-    ## 4        11.224                 11.0        1          0
-    ## 5         4.321                333.2        0          1
-    ## 6         2.349                 65.3        0          1
+    ## 1         3.807                 31.5        0          1
+    ## 2         2.850                 30.9        0          1
+    ## 3         2.755                 49.1        0          1
+    ## 4         3.033                 31.6        0          1
+    ## 5         0.748                 32.9        0          1
+    ## 6         4.321                333.2        0          1
 
 Finalmente, se procede a mostrar cuantos registros fueron ingresados de
 manera erronea, estos son 4866.
@@ -589,7 +591,7 @@ manera erronea, estos son 4866.
 nrow(sport_x)
 ```
 
-    ## [1] 4889
+    ## [1] 5299
 
 # Conclusion
 
